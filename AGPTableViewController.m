@@ -33,12 +33,18 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Incomplete implementation, return the number of sections
-    return 1;
+    return 2;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete implementation, return the number of rows
-    return 3;
+    if (section == 0) {
+        return 3;
+    }
+    else {
+        return 2;
+    }
+    
 }
 
 
@@ -46,7 +52,15 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"    forIndexPath:indexPath];
     
 //     Configure the cell...
-    cell.textLabel.text = @"Whoa...first cell";
+    cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
+    
+    
+    if (indexPath.section == 0) {
+        cell.backgroundColor = [UIColor redColor];
+    }
+    else {
+        cell.backgroundColor = [UIColor blueColor];
+    }
     return cell;
 }
 
