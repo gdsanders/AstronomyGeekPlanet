@@ -22,6 +22,18 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.planets = [[NSMutableArray alloc] init];
+    
+    [self.planets addObject:@"Mercury"];
+    [self.planets addObject:@"Venus"];
+    [self.planets addObject:@"Earth"];
+    [self.planets addObject:@"Mars"];
+    [self.planets addObject:@"Jupiter"];
+    [self.planets addObject:@"Saturn"];
+    [self.planets addObject:@"Uranus"];
+    [self.planets addObject:@"Nepture"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,19 +44,13 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 2;
+    
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    if (section == 0) {
-        return 3;
-    }
-    else {
-        return 2;
-    }
-    
+
+    return [self.planets count];
 }
 
 
@@ -52,9 +58,8 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"    forIndexPath:indexPath];
     
 //     Configure the cell...
-    cell.textLabel.text = [NSString stringWithFormat:@"%i", indexPath.row];
-    
-    
+    cell.textLabel.text = [self.planets objectAtIndex:indexPath.row];
+   
     if (indexPath.section == 0) {
         cell.backgroundColor = [UIColor redColor];
     }
