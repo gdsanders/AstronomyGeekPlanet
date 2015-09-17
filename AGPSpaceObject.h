@@ -7,7 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface AGPSpaceObject : NSObject
+
+- (id)initWithData: (NSDictionary *)data andImage:(UIImage *)image;
 
 @end
