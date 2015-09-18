@@ -10,4 +10,9 @@
 
 @implementation AGPSpaceObject
 
+- (id)initWithData: (NSDictionary *)data andImage:(UIImage *)image
+{
+    
+}
+
 @end
