@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSString *nickname;
 @property (strong, nonatomic) NSString *interestingFact;
 
+@property (strong, nonatomic) UIImage *spaceImage;
+
 - (id)initWithData: (NSDictionary *)data andImage:(UIImage *)image;
 
 @end

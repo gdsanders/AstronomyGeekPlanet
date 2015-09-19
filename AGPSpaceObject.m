@@ -10,8 +10,15 @@
 
 @implementation AGPSpaceObject
 
+- (id)init
+{
+    self = [self initWithData:nil andImage:nil];
+    return self;
+}
+
 - (id)initWithData: (NSDictionary *)data andImage:(UIImage *)image
 {
+    self = [super init];
     
 }
 
