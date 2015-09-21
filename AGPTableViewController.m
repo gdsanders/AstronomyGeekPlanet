@@ -7,6 +7,8 @@
 //
 
 #import "AGPTableViewController.h"
+#import "AstronomicalData.h"
+#import "AGPSpaceObject.h"
 
 @interface AGPTableViewController ()
 
@@ -25,14 +27,9 @@
     
     self.planets = [[NSMutableArray alloc] init];
     
-    [self.planets addObject:@"Mercury"];
-    [self.planets addObject:@"Venus"];
-    [self.planets addObject:@"Earth"];
-    [self.planets addObject:@"Mars"];
-    [self.planets addObject:@"Jupiter"];
-    [self.planets addObject:@"Saturn"];
-    [self.planets addObject:@"Uranus"];
-    [self.planets addObject:@"Nepture"];
+    for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets]) {
+        NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
+    }
     
 }
 
