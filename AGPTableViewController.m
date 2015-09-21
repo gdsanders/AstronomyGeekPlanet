@@ -29,6 +29,9 @@
     
     for (NSMutableDictionary *planetData in [AstronomicalData allKnownPlanets]) {
         NSString *imageName = [NSString stringWithFormat:@"%@.jpg", planetData[PLANET_NAME]];
+        
+        AGPSpaceObject *planet = [[AGPSpaceObject alloc] initWithData:planetData andImage:[UIImage imageNamed:imageName]];
+        [self.planets addObject:planet];
     }
     
 }
