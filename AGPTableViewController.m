@@ -58,15 +58,16 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"    forIndexPath:indexPath];
     
 //     Configure the cell...
-    cell.textLabel.text = [self.planets objectAtIndex:indexPath.row];
-   
-    if (indexPath.section == 0) {
-        cell.backgroundColor = [UIColor redColor];
-    }
-    else {
-        cell.backgroundColor = [UIColor blueColor];
-    }
-    return cell;
+    
+    AGPSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
+    cell.textLabel.text = planet.name;
+    
+    
+    
+    
+    
+    
+        return cell;
 }
 
 
