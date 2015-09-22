@@ -62,6 +62,11 @@
     AGPSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
     cell.textLabel.text = planet.name;
     cell.detailTextLabel.text = planet.nickname;
+    cell.imageView.image = planet.spaceImage;
+    
+    cell.backgroundColor = [UIColor clearColor];
+    cell.textLabel.textColor = [UIColor whiteColor];
+    cell.detailTextLabel.textColor = [UIColor colorWithWhite:0.5 alpha:1.0];
     
     
     
