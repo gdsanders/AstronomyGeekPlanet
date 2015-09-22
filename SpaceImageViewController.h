@@ -11,6 +11,7 @@
 @interface SpaceImageViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIImageView *imageView;
 
 
 @end

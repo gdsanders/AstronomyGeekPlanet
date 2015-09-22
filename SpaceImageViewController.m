@@ -10,6 +10,8 @@
 
 @interface SpaceImageViewController ()
 
+
+
 @end
 
 @implementation SpaceImageViewController
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.imageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Jupiter.jpg"]];
+    self.scrollView.contentSize = self.imageView.frame.size;
+    [self.scrollView addSubview:self.imageView];
 }
 
 - (void)didReceiveMemoryWarning {
