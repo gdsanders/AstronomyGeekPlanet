@@ -9,6 +9,7 @@
 #import "AGPTableViewController.h"
 #import "AstronomicalData.h"
 #import "AGPSpaceObject.h"
+#import "SpaceImageViewController.h"
 
 @interface AGPTableViewController ()
 
@@ -34,6 +35,18 @@
         [self.planets addObject:planet];
     }
     
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([sender isKindOfClass:[UITableViewCell class]]) {
+        if ([segue isKindOfClass:[SpaceImageViewController class]]) {
+            SpaceImageViewController *nextViewController = segue.destinationViewController;
+            NSIndexPath *path = [self.tableView indexPathForCell:sender];
+            AGPSpaceObject *selectedSpaceObject = [self.planets objectAtIndex:path.row];
+            nextViewController.spaceObject = selectedSpaceObject;
+        }
+    }
 }
 
 - (void)didReceiveMemoryWarning {
