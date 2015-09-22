@@ -61,6 +61,7 @@
     
     AGPSpaceObject *planet = [self.planets objectAtIndex:indexPath.row];
     cell.textLabel.text = planet.name;
+    cell.detailTextLabel.text = planet.nickname;
     
     
     
