@@ -40,7 +40,7 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     if ([sender isKindOfClass:[UITableViewCell class]]) {
-        if ([segue isKindOfClass:[SpaceImageViewController class]]) {
+        if ([segue.destinationViewController isKindOfClass:[SpaceImageViewController class]]) {
             SpaceImageViewController *nextViewController = segue.destinationViewController;
             NSIndexPath *path = [self.tableView indexPathForCell:sender];
             AGPSpaceObject *selectedSpaceObject = [self.planets objectAtIndex:path.row];
