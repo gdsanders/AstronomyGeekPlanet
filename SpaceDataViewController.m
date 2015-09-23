@@ -34,7 +34,27 @@
     static NSString *CellIdentifier = @"Datacell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
-    cell.textLabel.text = @"Data";
+    switch (indexPath.row) {
+        case 0:
+            cell.textLabel.text = @"Nickname:";
+            cell.detailTextLabel.text = self.spaceObject.nickname;
+            break;
+        case 1:
+            cell.textLabel.text = @"Diameter (km);";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.diameter];
+            break;
+        case 2:
+            cell.textLabel.text = @"Gravitational Force:";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.gravitionalForce];
+            break;
+        case 3:
+            cell.textLabel.text = @"Length of a Year (days):";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.yearLength];
+            break;
+        case 4:
+            cell.textLabel.text = @"";
+            
+    }
     
     return cell;
 
@@ -43,7 +63,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 8;
 }
 
 /*
