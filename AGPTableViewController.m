@@ -87,7 +87,7 @@
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath
 {
-    NSLog(@"Accessory button is working, %i", indexPath.row);
+    [self performSegueWithIdentifier:@"pushToSpaceData" sender:indexPath];
 }
 
 
