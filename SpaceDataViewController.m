@@ -40,7 +40,7 @@
             cell.detailTextLabel.text = self.spaceObject.nickname;
             break;
         case 1:
-            cell.textLabel.text = @"Diameter (km);";
+            cell.textLabel.text = @"Diameter (km):";
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.diameter];
             break;
         case 2:
@@ -52,7 +52,23 @@
             cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.yearLength];
             break;
         case 4:
-            cell.textLabel.text = @"";
+            cell.textLabel.text = @"Length of Day (hrs):";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.dayLength];
+            break;
+        case 5:
+            cell.textLabel.text = @"Temperature (Celsius):";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%f", self.spaceObject.temperature];
+            break;
+        case 6:
+            cell.textLabel.text = @"Number of moons";
+            cell.detailTextLabel.text = [NSString stringWithFormat:@"%i", self.spaceObject.numberOfMoons];
+            break;
+        case 7:
+            cell.textLabel.text = @"Interesting fact:";
+            cell.detailTextLabel.text = self.spaceObject.interestingFact;
+            break;
+        default:
+            break;
             
     }
     
